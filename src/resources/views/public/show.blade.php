@@ -1,6 +1,6 @@
 @extends('core::public.master')
 
-@section('title', $model->title . ' – ' . trans('news::global.name') . ' – ' . $websiteTitle)
+@section('title', $model->title . ' – ' . trans('slides::global.name') . ' – ' . $websiteTitle)
 @section('ogTitle', $model->title)
 @section('description', $model->summary)
 @section('image', $model->present()->thumbUrl())
@@ -17,4 +17,4 @@
         <div class="body">{!! $model->present()->body !!}</div>
     </article>
 
-@stop
+@endsection
