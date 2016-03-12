@@ -38,15 +38,6 @@ class Slide extends Base
     protected $appends = ['status', 'thumb', 'body_cleaned'];
 
     /**
-     * Columns that are file.
-     *
-     * @var array
-     */
-    public $attachments = [
-        'image',
-    ];
-
-    /**
      * Get title attribute from translation table
      * and append it to main model attributes.
      *
