@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Slides\Models;
 
-use Dimsav\Translatable\Translatable;
+use TypiCMS\Modules\Core\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
 use TypiCMS\Modules\Core\Models\Base;
 use TypiCMS\Modules\History\Traits\Historable;
@@ -35,7 +35,7 @@ class Slide extends Base
         'body',
     ];
 
-    protected $appends = ['status', 'thumb', 'body_cleaned'];
+    protected $appends = ['body_cleaned'];
 
     /**
      * Get title attribute from translation table

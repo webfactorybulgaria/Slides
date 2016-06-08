@@ -11,6 +11,6 @@ class SlideTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Slides\Models\Slide', 'slide_id');
+        return $this->belongsTo('TypiCMS\Modules\Slides\Models\Slide', 'slide_id')->withoutGlobalScopes();
     }
 }
