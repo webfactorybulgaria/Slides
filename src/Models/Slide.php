@@ -38,17 +38,6 @@ class Slide extends Base
     protected $appends = ['body_cleaned'];
 
     /**
-     * Get title attribute from translation table
-     * and append it to main model attributes.
-     *
-     * @return string title
-     */
-    public function getTitleAttribute($value)
-    {
-        return 'Slide '.$this->id;
-    }
-
-    /**
      * Get the page record associated with the slide.
      */
     public function page()
@@ -57,8 +46,27 @@ class Slide extends Base
     }
 
     /**
-     * Get Body attribute from translation table
-     * and append it to main model attributes.
+     * Append status attribute from translation table.
+     *
+     * @return string
+     */
+    public function getStatusAttribute()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Append thumb attribute.
+     *
+     * @return string
+     */
+    public function getThumbAttribute()
+    {
+        return $this->present()->thumbSrc(null, 22);
+    }
+
+    /**
+     * Append body_cleaned attribute from translation table.
      *
      * @return string
      */
