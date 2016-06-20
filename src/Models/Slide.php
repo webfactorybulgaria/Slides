@@ -46,16 +46,6 @@ class Slide extends Base
     }
 
     /**
-     * Append status attribute from translation table.
-     *
-     * @return string
-     */
-    public function getStatusAttribute()
-    {
-        return $this->status;
-    }
-
-    /**
      * Append thumb attribute.
      *
      * @return string
