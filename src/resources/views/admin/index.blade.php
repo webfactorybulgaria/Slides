@@ -9,7 +9,7 @@
     @include('core::admin._button-create', ['module' => 'slides'])
 
     <h1>
-        <span>@{{ models.length }} @choice('slides::global.slides', 2)</span>
+        <span>@{{ totalModels }} @choice('slides::global.slides', 2)</span>
     </h1>
 
     <div class="btn-toolbar">
@@ -18,15 +18,32 @@
 
     <div class="table-responsive">
 
-        <table st-persist="slidesTable" st-table="displayedModels" st-safe-src="models" st-order st-filter class="table table-condensed table-main">
+        <table st-persist="slidesTable" st-table="displayedModels" st-order st-sort-default="position" st-pipe="callServer" st-filter class="table table-condensed table-main">
             <thead>
+                <tr>
+                    <td colspan="6" st-items-by-page="itemsByPage" st-pagination="" st-template="/views/partials/pagination.custom.html"></td>
+                </tr>
                 <tr>
                     <th class="delete"></th>
                     <th class="edit"></th>
                     <th st-sort="status" class="status st-sort">Status</th>
                     <th st-sort="image" class="image st-sort">Image</th>
-                    <th st-sort="position" st-sort-default="true" class="position st-sort">Position</th>
+                    <th st-sort="position" class="position st-sort">Position</th>
                     <th>Body</th>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>
+                        <select class="form-control" st-input-event="change keydown" st-search="status.boolean">
+                            <option value=""></option>
+                            <option value="true">Active</option>
+                            <option value="false">Not Active</option>
+                        </select>
+                    </td>
+                    <td colspan="2"></td>
+                    <td>
+                        <input st-search="body" class="form-control input-sm" placeholder="@lang('global.Search')…" type="text">
+                    </td>
                 </tr>
             </thead>
 
@@ -48,7 +65,10 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="6" typi-pagination></td>
+                    <td colspan="5" st-items-by-page="itemsByPage" st-pagination="" st-template="/views/partials/pagination.custom.html"></td>
+                    <td>
+                        <div ng-include="'/views/partials/pagination.itemsPerPage.html'"></div>
+                    </td>
                 </tr>
             </tfoot>
         </table>
