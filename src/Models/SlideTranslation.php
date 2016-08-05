@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Slides\Models;
 
-use TypiCMS\Modules\Core\Models\BaseTranslation;
+use TypiCMS\Modules\Core\Custom\Models\BaseTranslation;
 
 class SlideTranslation extends BaseTranslation
 {
@@ -11,6 +11,6 @@ class SlideTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Slides\Models\Slide', 'slide_id')->withoutGlobalScopes();
+        return $this->belongsTo('TypiCMS\Modules\Slides\Custom\Models\Slide', 'slide_id')->withoutGlobalScopes();
     }
 }
