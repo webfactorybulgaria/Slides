@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Slides\Repositories;
 
-use TypiCMS\Modules\Core\Custom\Repositories\RepositoryInterface;
+use TypiCMS\Modules\Core\Shells\Repositories\RepositoryInterface;
 
 interface SlideInterface extends RepositoryInterface
 {

@@ -3,9 +3,9 @@
 namespace TypiCMS\Modules\Slides\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseApiController;
-use TypiCMS\Modules\Slides\Custom\Models\Slide;
-use TypiCMS\Modules\Slides\Custom\Repositories\SlideInterface as Repository;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Slides\Shells\Models\Slide;
+use TypiCMS\Modules\Slides\Shells\Repositories\SlideInterface as Repository;
 
 class ApiController extends BaseApiController
 {
@@ -49,7 +49,7 @@ class ApiController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \TypiCMS\Modules\Slides\Custom\Models\Slide $slide
+     * @param \TypiCMS\Modules\Slides\Shells\Models\Slide $slide
      *
      * @return \Illuminate\Http\JsonResponse
      */

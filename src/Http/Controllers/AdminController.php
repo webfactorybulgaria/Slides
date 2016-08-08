@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Slides\Http\Controllers;
 
-use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Slides\Custom\Http\Requests\FormRequest;
-use TypiCMS\Modules\Slides\Custom\Models\Slide;
-use TypiCMS\Modules\Slides\Custom\Repositories\SlideInterface;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Slides\Shells\Http\Requests\FormRequest;
+use TypiCMS\Modules\Slides\Shells\Models\Slide;
+use TypiCMS\Modules\Slides\Shells\Repositories\SlideInterface;
 
 class AdminController extends BaseAdminController
 {
@@ -41,7 +41,7 @@ class AdminController extends BaseAdminController
     /**
      * Edit form for the specified resource.
      *
-     * @param \TypiCMS\Modules\Slides\Custom\Models\Slide $slide
+     * @param \TypiCMS\Modules\Slides\Shells\Models\Slide $slide
      *
      * @return \Illuminate\View\View
      */
@@ -54,7 +54,7 @@ class AdminController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Slides\Custom\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Slides\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -68,8 +68,8 @@ class AdminController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Slides\Custom\Models\Slide              $slide
-     * @param \TypiCMS\Modules\Slides\Custom\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Slides\Shells\Models\Slide              $slide
+     * @param \TypiCMS\Modules\Slides\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */

@@ -5,13 +5,13 @@ namespace TypiCMS\Modules\Slides\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Custom\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Custom\Observers\FileObserver;
-use TypiCMS\Modules\Core\Custom\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Slides\Custom\Models\Slide;
-use TypiCMS\Modules\Slides\Custom\Models\SlideTranslation;
-use TypiCMS\Modules\Slides\Custom\Repositories\CacheDecorator;
-use TypiCMS\Modules\Slides\Custom\Repositories\EloquentSlide;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Observers\FileObserver;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Slides\Shells\Models\Slide;
+use TypiCMS\Modules\Slides\Shells\Models\SlideTranslation;
+use TypiCMS\Modules\Slides\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Slides\Shells\Repositories\EloquentSlide;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -36,7 +36,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Slides',
-            'TypiCMS\Modules\Slides\Custom\Facades\Facade'
+            'TypiCMS\Modules\Slides\Shells\Facades\Facade'
         );
 
         // Observers
@@ -50,12 +50,12 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Slides\Custom\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Slides\Shells\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Slides\Custom\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Slides\Shells\Composers\SidebarViewComposer');
 
         /*
          * Add the page in the view.
@@ -64,7 +64,7 @@ class ModuleProvider extends ServiceProvider
             $view->page = TypiCMS::getPageLinkedToModule('slides');
         });
 
-        $app->bind('TypiCMS\Modules\Slides\Custom\Repositories\SlideInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Slides\Shells\Repositories\SlideInterface', function (Application $app) {
             $repository = new EloquentSlide(new Slide());
             if (!config('typicms.cache')) {
                 return $repository;

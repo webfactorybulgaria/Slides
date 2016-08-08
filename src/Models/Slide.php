@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Slides\Models;
 
-use TypiCMS\Modules\Core\Custom\Traits\Translatable;
+use TypiCMS\Modules\Core\Shells\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Custom\Models\Base;
-use TypiCMS\Modules\History\Custom\Traits\Historable;
+use TypiCMS\Modules\Core\Shells\Models\Base;
+use TypiCMS\Modules\History\Shells\Traits\Historable;
 
 class Slide extends Base
 {
@@ -13,7 +13,7 @@ class Slide extends Base
     use PresentableTrait;
     use Translatable;
 
-    protected $presenter = 'TypiCMS\Modules\Slides\Custom\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Slides\Shells\Presenters\ModulePresenter';
 
     protected $fillable = [
         'image',
@@ -42,7 +42,7 @@ class Slide extends Base
      */
     public function page()
     {
-        return $this->belongsTo('TypiCMS\Modules\Pages\Custom\Models\Page');
+        return $this->belongsTo('TypiCMS\Modules\Pages\Shells\Models\Page');
     }
 
     /**
