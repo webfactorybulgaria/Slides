@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Slides\Shells\Repositories;
 
-use TypiCMS\Modules\Slides\Repositories\SlideInterface as Base;
+use TypiCMS\Modules\Slides\Repositories\SlideInterface as BaseInterface;
 
-interface SlideInterface extends Base
+interface SlideInterface extends BaseInterface
 {
 
 }

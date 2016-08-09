@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Slides\Shells\Http\Requests;
 
-use TypiCMS\Modules\Slides\Http\Requests\FormRequest as Base;
+use TypiCMS\Modules\Slides\Http\Requests\FormRequest as BaseClass;
 
-class FormRequest extends Base
+class FormRequest extends BaseClass
 {
 
 }

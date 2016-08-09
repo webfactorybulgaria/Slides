@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Slides\Shells\Models;
 
-use TypiCMS\Modules\Slides\Models\SlideTranslation as Base;
+use TypiCMS\Modules\Slides\Models\SlideTranslation as BaseClass;
 
-class SlideTranslation extends Base
+class SlideTranslation extends BaseClass
 {
 
 }
